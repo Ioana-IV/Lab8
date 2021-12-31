@@ -15,5 +15,10 @@ namespace Ivanov_Ioana_Lab8.Data
         }
 
         public DbSet<Ivanov_Ioana_Lab8.Models.Book> Book { get; set; }
+
+        public DbSet<Ivanov_Ioana_Lab8.Models.Publisher> Publisher { get; set; }
+
+        public DbSet<Ivanov_Ioana_Lab8.Models.Category> Category { get; set; }
+        public DbSet<Ivanov_Ioana_Lab8.Models.BookCategory> BookCategory { get; set; }
     }
 }
