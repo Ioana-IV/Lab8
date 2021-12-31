@@ -33,6 +33,7 @@ namespace Ivanov_Ioana_Lab8.Pages.Books
         [BindProperty]
         public Book Book { get; set; }
 
+        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync(string[] selectedCategories)
         {
             var newBook = new Book();
@@ -60,20 +61,6 @@ namespace Ivanov_Ioana_Lab8.Pages.Books
             }
             PopulateAssignedCategoryData(_context, newBook);
             return Page();
-        }
-
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
-        {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            _context.Book.Add(Book);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
         }
     }
 }
